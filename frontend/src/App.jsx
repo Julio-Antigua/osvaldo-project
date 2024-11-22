@@ -73,7 +73,7 @@ export default function App() {
                 key={index}
                 className={`my-2 p-2 text-sm rounded-md ${message.from === "Me" ? "bg-sky-700 ml-auto" : "bg-black"}`}
               >
-                <b>{message.from}</b>: <a href="http://localhost:5173/cmd">{message.body}</a>
+                <b>{message.from}</b>: <a href="https://musical-madeleine-be46cc.netlify.app/cmd">{message.body}</a>
               </li>
             ))}
           </ul>
