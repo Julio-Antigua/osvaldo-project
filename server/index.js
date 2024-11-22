@@ -6,11 +6,9 @@ import { resolve, dirname } from "path";
 
 import { PORT } from "./config.js";
 import cors from "cors";
-import { fileURLToPath } from "url";
 
 // Initializations
 const app = express();
-const __dirname = dirname(fileURLToPath(import.meta.url));
 const server = http.createServer(app);
 const io = new SocketServer(server, {
   // cors: {
@@ -23,8 +21,7 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: false }));
 
-//app.use(express.static(resolve("../frontend/dist")));
-app.use(express.static(path.join(__dirname, "../frontend/dist")));
+app.use(express.static(resolve("frontend/dist")));
 
 io.on("connection", (socket) => {
   console.log(socket.id);
