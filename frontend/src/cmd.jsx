@@ -4,6 +4,7 @@ import io from "socket.io-client";
 
 // Conexión al socket
 const socket = io("/");
+//const socket = io("http://desktop-2nopba2/");
 
 export default function Cmd() {
   const [messages, setMessages] = useState([]);
@@ -39,7 +40,7 @@ export default function Cmd() {
           <h1 className="text-center text-sm font-bold flex-grow">
             |--------|
           </h1>
-          <Link to="/">
+          <Link to="/services/page/app">
             <button className="bg-red-500 hover:bg-red-600 text-black px-2 py-1 rounded-md text-xs">
               X
             </button>
@@ -52,14 +53,14 @@ export default function Cmd() {
           <div className="overflow-y-auto mb-2 max-h-72">
             {messages.map((message, index) => (
               <div key={index}>
-                <span className="text-gray-500">>>>:</span> {message.body}
+                <span className="text-gray-500">&gt;&gt;&gt;:</span> {message.body}
               </div>
             ))}
           </div>
 
           {/* Input directamente debajo */}
           <form onSubmit={handleSubmit} className="flex items-center">
-            <span className="text-gray-500">>>>:</span>
+            <span className="text-gray-500">&gt;&gt;&gt;:</span>
             <input
               name="message"
               type="text"
