@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import io from "socket.io-client";
 
 // Conexión al socket
-const socket = io("/");
+const socket = io("https://node-test-84xy.onrender.com");
 //const socket = io("http://desktop-2nopba2/");
 
 export default function Cmd() {

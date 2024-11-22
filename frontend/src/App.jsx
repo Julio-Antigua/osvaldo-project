@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import io from "socket.io-client";
 
 // const socket = io("http://localhost:3001");
-const socket = io("/");
+const socket = io("https://node-test-84xy.onrender.com");
 
 export default function App() {
   const [messages, setMessages] = useState([]);
@@ -49,7 +49,7 @@ export default function App() {
         </div>
         {/* Opciones */}
         <div className="flex gap-4">
-        <Link to="/cmd">
+          <Link to="/cmd">
             <button className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md">
               Ir a CMD
             </button>
@@ -71,11 +71,9 @@ export default function App() {
             {messages.map((message, index) => (
               <li
                 key={index}
-                className={`my-2 p-2 text-sm rounded-md ${
-                  message.from === "Me" ? "bg-sky-700 ml-auto" : "bg-black"
-                }`}
+                className={`my-2 p-2 text-sm rounded-md ${message.from === "Me" ? "bg-sky-700 ml-auto" : "bg-black"}`}
               >
-                <b>{message.from}</b>: <a href="http://localhost:5173/cmd">{message.body}</a> 
+                <b>{message.from}</b>: <a href="http://localhost:5173/cmd">{message.body}</a>
               </li>
             ))}
           </ul>

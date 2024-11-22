@@ -7,8 +7,10 @@ export default defineConfig({
   server: {
     proxy: {
       "/socket.io": {
-        target: "ws://localhost:3000",
-        ws: true,
+        target: "https://node-test-84xy.onrender.com",
+        ws: true,  // Habilita el proxy para WebSocket
+        changeOrigin: true,  // Asegúrate de que el origen del proxy sea correcto
+        secure: false,  
       },
     },
   },
