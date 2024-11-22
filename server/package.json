@@ -1,13 +1,12 @@
 {
-  "name": "socket-messages-react",
+  "name": "backend-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Socket.IO backend server",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon server/index.js --ignore frontend",
-    "build": "npm run --prefix frontend build",
-    "start": "node server/index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
